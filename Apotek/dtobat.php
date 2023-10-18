@@ -12,6 +12,7 @@
 		<?php 
 			//Connection
 			$con = mysqli_connect("localhost","root","","apotek") or die(mysqli_error());
+			//hapus function
 			
 			//Main
 			if (isset($_GET['aksi'])){
@@ -288,23 +289,24 @@
 			}
 			//Close Function edit (UPDATE)
 			
-			//Function hapus (DELETE)
-			function hapus($con){
-				$id		= $_GET['id'];
-				$img 	= $_GET['img'];
-				
-				unlink('image/'.$img);
-				$sql	=  "DELETE FROM dtobat WHERE id_obat='$id'";
-				$result = mysqli_query($con,$sql);
-				if($result) {
-					header("location:selectObat.php");
-				}
-				else{
-					echo "Query Error : ".mysqli_error($con);
-				}
-			}
-			//Close Function hapus (DELETE)
+			
 		}
+		//Function hapus (DELETE)
+		function hapus($con){
+			$id		= $_GET['id'];
+			$img 	= $_GET['img'];
+			
+			unlink('image/'.$img);
+			$sql	=  "DELETE FROM dtobat WHERE id_obat='$id'";
+			$result = mysqli_query($con,$sql);
+			if($result) {
+				header("location:dtobat.php");
+			}
+			else{
+				echo "Query Error : ".mysqli_error($con);
+			}
+		}
+		//Close Function hapus (DELETE)
 		?>		
    </body>
 </html>
