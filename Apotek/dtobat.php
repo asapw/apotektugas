@@ -4,7 +4,7 @@
 	  <title>Apotek-Sediaan</title>
    </head>
    <body>
-   <h1>Data Sediaan</h1><hr/>
+   <h1>Data Obat</h1><hr/>
    <a href='index.php' style='text-decoration:none'>
 		<img src='icon/back.ico' width='20' height='20' title='Back to Home' align='top'/>
 		<font color='brown'>Back to Home</font></a>
@@ -62,12 +62,8 @@
 								<td><?= $data['harga']; ?></td>
 								<td><?= date("d M Y",strtotime($data['expire_date'])); ?></td>
 								<td align="center"> 
-									<?=
-										"<a href='dtobat.php?id=".$data['id_obat']."'>
-										<img src='icon/edit.ico' width='20' height='20' title='edit'/></a>
-										<a href='dtobat.php?id=".$data['id_obat']."&img=".$data['image']."'>
-										<img src='icon/delete.ico' width='20' height='20' title='delete'/></a>";
-									?>
+								<a href="dtobat.php?aksi=edit&id=<?= $data['id_obat']; ?>">Update</a> |
+								<a href="dtobat.php?aksi=hapus&id=<?= $data['id_obat']; ?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
 								</td>
 							</tr>
 					<?php 
@@ -294,15 +290,17 @@
 			
 			//Function hapus (DELETE)
 			function hapus($con){
-				if(isset($_GET['id'])){
-					$id		= $_GET['id'];
-					$img 	= $_GET['img'];
-					unlink('image/'.$img);
-					$sql	=  "DELETE FROM dtobat WHERE id_obat='$id'";
-					$result = mysqli_query($con,$sql);				
-					if($result){
-						header('location: dtobat.php');
-					}
+				$id		= $_GET['id'];
+				$img 	= $_GET['img'];
+				
+				unlink('image/'.$img);
+				$sql	=  "DELETE FROM dtobat WHERE id_obat='$id'";
+				$result = mysqli_query($con,$sql);
+				if($result) {
+					header("location:selectObat.php");
+				}
+				else{
+					echo "Query Error : ".mysqli_error($con);
 				}
 			}
 			//Close Function hapus (DELETE)
