@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 117px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Navbar */
+.custom-nav {
+    padding-bottom:40px;
+    background-color:rgb(255,255,255);
+}
+
+
+.custom-img-width {
+    width: 35px;
+    transform: scale(6);   
+}
+
+.custom-border-bottom {
+    border-bottom:0.5px solid rgba(205,205,205,0.8);
+}
+
+
+
+/* Main Section */
+.custom-main {
+    padding: 48px 96px!important;
+    background-color:#f4f4f6;
+}
+
+.custom-main-card {
+    padding:36px 48px!important;
+    background-color:rgb(255,255,255);
+}
+
+.custom-main-card-height {
+    height:120px;
+    background-color:rgba(239,239,240);
+    border-radius:10px;
+}
+
+.custom-main-card-img {
+    width:48px;
+    height:48px;
+}
+
+.custom-main-card-font {
+    font-size: 14px;
+}
+
+
+/* Search */
+.search-wrapper label {
+    display: block;
+}
+
+/* Main section Search bar */
+.custom-input {
+    text-decoration: none;
+}
+
+.custom-input:focus {
+    outline: none; /* This will remove the outline when the input is focused */
+}
+
+/* Basic styling for the custom search bar container */
+.custom-search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+    width:auto; /* Adjust the width as needed */
+}
+
+/* Style for the search input field */
+.custom-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+/* Style for the search button */
+
+
+/* Style for the search icon inside the button */
+.search-button img {
+    width: 20px; 
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Card */
+.custom-card {
+    height:80px;
+    width:80px;
+    background:#000000;
+}
+
+
+/* Custom Input field */
+.custom-Input {
+    padding:10px;
+    outline: none;
+    border:0.5px solid rgba(211,211,211,0.9);
+    border-radius:10px;
+    width:50%;
+}
+
+.custom-Input:focus {
+    border:1px solid black;
+}
+
+/* Custom type File */
+input[type="file"] {
+    background-color: rgba(239,239,240)!important; /* Background color */
+    font-family: Arial, sans-serif!important; /* Font family */
+    font-size: 16px!important; /* Font size */
+    border-radius:10px!important;
+}
+
+/* Custom table */
+table {
+    border-collapse: collapse; /* This is important for consistent rounded corners */
+    border-radius: 10px; /* Adjust the value to control the roundness of the corners */
+    overflow: hidden; /* This helps hide any content overflow */
+    width: 100%; /* Optional: Set the table width to 100% if needed */
+  }
+  
+  th, td {
+    padding: 8px; /* Optional: Add padding to the table cells for better spacing */
+    border: 1px solid #000; /* Optional: Add a border for better visibility */
+  }
+
+/* Custom Button */
+.custom-btn {
+    outline:1px solid #4A15ADCC;
+    transition: color 0.3s;
+}
+.custom-header-btn {
+    background-color:#4A15ADCC!important;
+    color:#FFFFFF!important;
+}
+
+.custom-btn:hover {
+    background-color:#4A15ADCC!important;
+    color:#FFFFFF!important;
+}
+
+/* Footer */
+.custom-footer {
+    background-color:rgba(74,21,173,0.8);
+    color:white;
+}
+
+.custom-cr {
+    background-color:#30106b;
+}
+
+
+.custom-img-width-footer {
+    width: 100px; /* Set the width to your desired size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 24px 0;
+    transform: scale(3.2);
+}
+
+
+
+/* Custom media query */
+@media (max-width: 1199px) {
+    .custom-padding {
+        padding-bottom:12px;
+        margin-bottom:20px;
+    }
+}
